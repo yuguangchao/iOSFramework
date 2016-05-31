@@ -1,0 +1,27 @@
+//
+//  PrefixHeader.pch
+//  iOSFramework
+//
+//  Created by apple on 16/5/31.
+//  Copyright © 2016年 apple. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "UIBarButtonItem+Extension.h"
+#import "UIView+THFrame.h"
+#define HBRGB(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define HBRandomColor HBRGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256)) //随机色
+
+#define RGBCOLOR_HEX(hexColor) [UIColor colorWithRed: (((hexColor >> 16) & 0xFF))/255.0f         \
+green: (((hexColor >> 8) & 0xFF))/255.0f          \
+blue: ((hexColor & 0xFF))/255.0f                 \
+alpha: 1]
+#define GRAYTEXTCOLOR RGBCOLOR_HEX(0x7b7b7b)
+#define ButtonNormalColor RGBCOLOR_HEX(0x67d2ca)
+
+//屏幕高
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+//屏幕宽
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#endif /* PrefixHeader_pch */
