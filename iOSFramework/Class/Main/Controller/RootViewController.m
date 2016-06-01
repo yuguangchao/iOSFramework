@@ -1,38 +1,31 @@
 //
-//  MainNavigationController.m
+//  RootViewController.m
 //  iOSFramework
 //
-//  Created by apple on 16/5/30.
+//  Created by apple on 16/6/1.
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
-#import "MainNavigationController.h"
+#import "RootViewController.h"
 
-@interface MainNavigationController ()
+@interface RootViewController ()
 
 @end
 
-@implementation MainNavigationController
+@implementation RootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    if (self.viewControllers.count > 0) {
-        viewController.hidesBottomBarWhenPushed = YES; //隐藏tabbar
+    if(self.navigationController.viewControllers.count > 0){
         
-        //添加返回按钮
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem setNavigationBarBackGroundImgName:@"navigationButtonReturn" target:self selector:@selector(back)];
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem setNavigationBarBackGroundImgName:@"navigationButtonReturn" target:self selector:@selector(back)];
     }
-    
-    [super pushViewController:viewController animated:animated];
 }
-
 - (void)back
 {
-    [self popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
